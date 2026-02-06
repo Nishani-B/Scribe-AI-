@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===============================
+   ROOT VARIABLES (FROM YOUR HTML)
+================================ */
+:root {
+  --navy-deep: #050a18;
+  --navy-accent: #0a1329;
+  --electric-violet: #8b5cf6;
+  --neon-glow: #a78bfa;
+}
+
+/* ===============================
+   BASE
+================================ */
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--navy-deep);
+  color: white;
+  overflow: hidden;
+}
+
+/* ===============================
+   SPLASH UI EFFECTS
+================================ */
+.bg-gradient-radial {
+  background: radial-gradient(circle at center, #101e42 0%, #050a18 100%);
+}
+
+.neon-box {
+  box-shadow:
+    0 0 20px rgba(139, 92, 246, 0.3),
+    inset 0 0 15px rgba(139, 92, 246, 0.2);
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.glow-text {
+  text-shadow: 0 0 10px rgba(167, 139, 250, 0.6);
+}
+
+.bar-glow {
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.8);
+}
+
+/* ===============================
+   RECORDING ANIMATIONS
+================================ */
+@keyframes wave-pulse {
+  0%, 100% { height: 10px; }
+  50% { height: 40px; }
+}
+
+.sound-bar {
+  width: 4px;
+  border-radius: 999px;
+  background: linear-gradient(to top, #06b6d4, #a855f7);
+  animation: wave-pulse 1.2s ease-in-out infinite;
+}
+
+.sound-bar:nth-child(2n) { animation-delay: 0.1s; }
+.sound-bar:nth-child(3n) { animation-delay: 0.2s; }
+.sound-bar:nth-child(4n) { animation-delay: 0.3s; }
+.sound-bar:nth-child(5n) { animation-delay: 0.4s; }
+
+.recording-glow {
+  box-shadow: 0 0 35px 5px rgba(6, 182, 212, 0.3);
+}
+
+@keyframes aura-expand {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.aura-pulse {
+  animation: aura-expand 3s infinite ease-out;
+}
